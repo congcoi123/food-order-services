@@ -1,0 +1,10 @@
+process.env.DB=ids
+process.env.DB_USER=root
+process.env.DB_PASS=kong$
+process.env.DB_REPLS=foodorder
+process.env.DB_SERVERS=192.168.1.111:27017 192.168.1.111:27018 192.168.1.111:27019
+process.env.SSL_ENABLED=false
+process.env.PORT=3004
+process.env.SESSION_EXP=1
+process.env.TEST_MODE_DB=true
+process.env.EXCEPTION_ENABLED=true

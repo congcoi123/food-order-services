@@ -1,0 +1,12 @@
+[
+  {
+    "name": "test-service",
+    "host": "localhost",
+    "port": "3001",
+    "protocol": "http",
+    "path": "api/v1",
+    "middleware": [
+      "validate"
+    ]
+  }
+]

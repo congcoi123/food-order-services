@@ -1,0 +1,29 @@
+{
+  "name": "log-service",
+  "version": "1.0.0",
+  "description": "This is log-service of the food-order project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha -R spec src/**/*.spec.js"
+  },
+  "author": "kong",
+  "license": "ISC",
+  "dependencies": {
+    "awilix": "^2.10.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "helmet": "^3.9.0",
+    "http-status": "^1.0.1",
+    "joi": "^13.0.1",
+    "jwt-simple": "^0.5.1",
+    "mocha": "^4.0.1",
+    "mongodb": "^2.2.33",
+    "morgan": "^1.9.0",
+    "should": "^13.1.2",
+    "spdy": "^3.4.7",
+    "supertest": "^3.0.0",
+    "underscore": "^1.8.3"
+  }
+}

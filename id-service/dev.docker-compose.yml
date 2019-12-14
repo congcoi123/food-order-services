@@ -1,0 +1,40 @@
+# For developing stage
+version: '3'
+
+services:
+  # The application
+  app:
+    build:
+      context: .
+      dockerfile: dev.dockerfile
+    volumes:
+      - ./:/usr/app
+    ports:
+      - "3001:3001"
+    links:      
+      - mongo
+    extra_hosts:
+      - "dockerhost:$DOCKERHOST"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"        
+
+  # Database
+  mongo:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=kong$
+      - MONGO_INITDB_DATABASE=ids
+    ports:
+      - "27018:27017"
+    command: --auth
+    #volumes:
+      #- /data/mongodb:/data/db
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"

@@ -1,0 +1,14 @@
+{
+  "name": "gen-token",
+  "version": "1.0.0",
+  "description": "Only simple module to generate token for testing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "kong",
+  "license": "ISC",
+  "dependencies": {
+    "jwt-simple": "^0.5.1"
+  }
+}

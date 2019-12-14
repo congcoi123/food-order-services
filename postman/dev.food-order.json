@@ -1,0 +1,1025 @@
+{
+	"info": {
+		"name": "[DEV] Food Order Service",
+		"_postman_id": "13e83a04-7f1c-b30f-7b5c-9911e8bb1af1",
+		"description": "Food Order project's API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Role",
+			"description": "",
+			"item": [
+				{
+					"name": "Get permission from role's id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/api/common/permission?id=store",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"common",
+								"permission"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "store",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get all permissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/permissions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"permissions"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get all roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"roles"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get role by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/role/?id=test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"role",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "test",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create new role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"_id\": \"customer\",\n\t\"name\": \"Test\",\n\t\"description\": \"This is a test\",\n\t\"permissions\": [\n\t\t\"ROLE_READ\",\n\t\t\"ROLE_UPDATE\"\n\t]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"role"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"test\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"role"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Ping role service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						},
+						"description": "PING"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ID",
+			"description": "",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"_id\": \"cong123\",\n\t\"name\": \"Cong\",\n\t\"email\": \"congcoi123@gmail.com\",\n\t\"role\": \"customer\",\n\t\"pass\": \"passisnotgood\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/common/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"common",
+								"register"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"_id\": \"cong123\",\n\t\"pass\": \"passisnotgood\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/common/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"common",
+								"login"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Ids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/admin/ids",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"ids"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/admin/id?credential=cong123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"id"
+							],
+							"query": [
+								{
+									"key": "credential",
+									"value": "cong123",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"credential\": \"cong123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/admin/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"id"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Food",
+			"description": "",
+			"item": [
+				{
+					"name": "Category",
+					"description": "",
+					"item": [
+						{
+							"name": "Get a category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/admin/category?id=pizza",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"category"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "pizza",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"_id\": \"pizza\",\n\t\"name\": \"PIZZA\",\n\t\"description\": \"This is pizza!\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/admin/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"category"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a category",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"pizza\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/admin/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"category"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Retailer",
+					"description": "",
+					"item": [
+						{
+							"name": "Get a retailer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/admin/retailer?id=pizzahut",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"retailer"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "pizzahut",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new retailer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"_id\": \"pizzahut\",\n\t\"name\": \"Pizza Hut\",\n\t\"email\": \"pizzahut@gmail.com\",\n\t\"phone\": \"028991234\",\n\t\"images\": [\n\t\t\"http://images.com/image_1.png\"\n\t]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/admin/retailer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"retailer"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a retailer",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"pizzahut\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/admin/retailer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"retailer"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Group",
+					"description": "",
+					"item": [
+						{
+							"name": "Get a group",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/group?id=5a193629ce3cc5000fa4fd91",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"group"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5a193629ce3cc5000fa4fd91",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new group",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"group_1\",\n\t\"description\": \"Group of pizza hut\",\n\t\"retailer\": \"pizzahut\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/group",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"group"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a group",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"5a1934a767c4fd000f26c4d6\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/group",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"group"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Store",
+					"description": "",
+					"item": [
+						{
+							"name": "Get a store",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/store?id=store1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"store"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "store1",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"_id\": \"store1\",\n\t\"name\": \"Store 1\",\n\t\"phone\": \"028112334\",\n\t\"address\": \"14 Nguyen Duy, Binh Thanh\",\n\t\"time\": {\n\t\t\"days\": [1, 1, 1, 1, 1, 1, 0],\n\t\t\"open\": 840,\n\t\t\"close\": 1120\n\t},\n\t\"coordinate\": [10.1111, 12.009],\n\t\"images\": [\n\t\t\"http://images.com/image1.png\"\n\t],\n\t\"capture\": \"none\",\n\t\"retailer\": \"pizzahut\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/store",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"store"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a store",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"store1\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/store",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"store"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Product",
+					"description": "",
+					"item": [
+						{
+							"name": "Get a product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/product?id=5a193ab234227f0010b97ada",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"product"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5a193ab234227f0010b97ada",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Product 1\",\n\t\"category\": \"pizza\",\n\t\"group\": \"none\",\n\t\"description\": \"none\",\n\t\"note\": \"none\",\n\t\"images\": [\n\t\t\"http://images.com/images.png\"\n\t],\n\t\"optional\": {\n\t\t\"wdv\": [\"chick\", \"meat\", \"beef\"],\n\t\t\"vegetable\": [\"chili\", \"tomato\"]\n\t},\n\t\"retailer\": \"pizzahut\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"product"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a product",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"5a193ab234227f0010b97ada\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"product"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Package",
+					"description": "",
+					"item": [
+						{
+							"name": "Get a package",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/package?id=5a193c5d19dc98000f728f6e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"package"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5a193c5d19dc98000f728f6e",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new package",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Combo Pizza\",\n\t\"price\": 150000,\n\t\"description\": \"none\",\n\t\"images\": [\n\t\t\"http://images.com/image.png\"\n\t],\n\t\"products\": [\n\t\t\"abcdefag\"\n\t],\n\t\"retailer\": \"pizzahut\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/package",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"package"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a package",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"5a193c5d19dc98000f728f6e\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/api/v1/retailer/package",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"api",
+										"v1",
+										"retailer",
+										"package"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "PING",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3002/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
