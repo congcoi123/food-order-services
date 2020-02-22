@@ -7,7 +7,7 @@ This project is currently available under the [MIT](https://github.com/TenMei/fo
 ## Installation
 You can get the sources:
 ```
-git clone https://github.com/TenMei/food-order-services.git
+git clone https://github.com/congcoi123/food-order-services.git
 ```
 
 ## Manual
